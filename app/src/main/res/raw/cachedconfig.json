@@ -1,0 +1,26 @@
+{
+  "data": [{
+    "type": "tabconfig",
+    "id": "1",
+    "attributes": {
+      "title": "Tab 1 title",
+      "body": "Tab 1 body"
+    }
+  },
+  {
+    "type": "tabconfig",
+    "id": "2",
+    "attributes": {
+      "title": "Tab 2 title",
+      "body": "Tab 2 body"
+    }
+  },
+  {
+    "type": "tabconfig",
+    "id": "3",
+    "attributes": {
+      "title": "Tab 3 title",
+      "body": "Tab 3 body"
+    }
+  }]
+}

@@ -1,0 +1,49 @@
+apply plugin: 'com.android.application'
+apply from: 'dependencies.gradle'
+
+android {
+    compileSdkVersion 26
+    defaultConfig {
+        applicationId "testproject.vlad.humeniuk.testproject"
+        minSdkVersion 15
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        buildConfigField "String", "BASE_URL", "\"http://base_url_here/\""
+
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        targetCompatibility 1.8
+        sourceCompatibility 1.8
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation supportAppcompat + supportAppcompatVer
+    implementation supportDesign + supportDesignVer
+    implementation constraintLayout + constraintLayoutVer
+
+    //ButterKnife
+    compile butterknife + butterknifeVer
+    annotationProcessor butterknifeCompiler + butterknifeCompilerVer
+
+    //Retrofit
+    compile retrofit + retrofitVer
+    compile gsonConverter + gsonConverterVer
+    compile loggingInterceptor + loggingInterceptorVer
+
+    //TEST
+    testImplementation junit + junitVer
+    androidTestImplementation testRunner + testRunnerVer
+    androidTestImplementation espressoCore + espressoCoreVer
+    testCompile mockito + mockitoVer
+    testCompile mockRetrofit + mockRetrofitVer
+}
